@@ -6,13 +6,13 @@ classDiagram
     class Reprodutor {
         +iniciar()
         +pausar()
-        +sair()
         +proximo()
         +anterior()
     }
 
     class ReprodutorMusical {
         +selecionarMusica(String exemplo)
+        +sairMusica()
     }
     
     RepodutorMusical --> Reprodutor
@@ -20,7 +20,8 @@ classDiagram
     class ReprodutorVideo {
         +selecionarVideo()
         +rotacionarVideo()
-        +ampliarVideo()   
+        +ampliarVideo()  
+        +sairVideo() 
     }
     
     RepodutorVideo --> Reprodutor
@@ -40,8 +41,8 @@ classDiagram
     class iPhone {
     }
     
-    iPhone --> ReprodutorVideo
-    iPhone --> ReprodutorMusical
+    iPhone --> ReprodutorVideo --> Reprodutor
+    iPhone --> ReprodutorMusical --> Reprodutor
     iPhone --> AparelhoTelefonico
     iPhone --> NavegadorInternet
 ```
