@@ -1,26 +1,47 @@
 # Desafio de orientação a objetos em Java
 
-### Exemplo de Diagrama UML (Mermaid)
+### Diagrama UML
 ```mermaid
 classDiagram
-    class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+    class Reprodutor {
+        +iniciar()
+        +pausar()
+        +sair()
+        +proximo()
+        +anterior()
     }
 
+    class ReprodutorMusical {
+        +selecionarMusica(String exemplo)
+    }
+    
+    RepodutorMusical --> Reprodutor
+    
+    class ReprodutorVideo {
+        -renderizarVideo()
+        +selecionarVideo()
+        +rotacionarVideo()
+        +ampliarVideo()   
+    }
+    
+    RepodutorVideo --> Reprodutor
+
     class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +atender()
+        +ligar(String numero)
+        +iniciarCorreioVoz()
     }
 
     class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        +adicionarNovaAba()
+        +acessarPagina(String url)
+        +atualizarPagina()
     }
 
     class iPhone {
     }
-
+    
+    iPhone --> ReprodutorVideo
     iPhone --> ReprodutorMusical
     iPhone --> AparelhoTelefonico
     iPhone --> NavegadorInternet
