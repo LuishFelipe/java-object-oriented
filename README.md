@@ -18,7 +18,6 @@ classDiagram
     RepodutorMusical --> Reprodutor
     
     class ReprodutorVideo {
-        -renderizarVideo()
         +selecionarVideo()
         +rotacionarVideo()
         +ampliarVideo()   
